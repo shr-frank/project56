@@ -23,4 +23,6 @@ class Squirrel(models.Model):
     approaches=models.BooleanField()
     indifferent=models.BooleanField()
     runs_from=models.BooleanField()
+
+
 # Create your models here.
