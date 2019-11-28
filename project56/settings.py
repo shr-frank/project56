@@ -25,12 +25,13 @@ SECRET_KEY = '3mz%1=7!q0es++gk=$pe&9gt1b3ft2y*+-!nl(b@%xoy8ay4c('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'tracker.apps.TrackerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
