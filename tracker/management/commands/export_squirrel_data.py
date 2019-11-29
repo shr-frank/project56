@@ -16,7 +16,7 @@ class Command(BaseCommand):
         model = apps.get_model('tracker', 'Squirrel')
         field_names = [f.name for f in model._meta.fields]
         with open(x, 'w') as csvfile:
-            writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+            writer = csv.writer(csvfile)
             writer.writerow(field_names)
             for instance in model.objects.all():
                 writer.writerow([getattr(instance, f) for f in field_names])
