@@ -1,7 +1,8 @@
 from django.shortcuts import render
-def sample(request):
-    context = {'latest_question_list': 'hello'}
-    return render(request, 'tracker/sample.html', context)
+from .models import *
+def sightings(request):
+    sq_all=Squirrel.objects.all()
+    return render(request, 'tracker/sightings.html', locals())
 
 
 # Create your views here.
