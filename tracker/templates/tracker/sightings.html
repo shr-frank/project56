@@ -11,7 +11,7 @@
 	<p>
 	{% for squirrel in sq_all %}
 	<ul>
-		<li> {{squirrel}} <a href="">EDIT</a></li>
+		<li> {{squirrel}} <a href="{% url 'tracker:update' squirrel.unique_squirrel_id %}">EDIT</a></li>
 	</ul>
 	{% endfor %}
 
