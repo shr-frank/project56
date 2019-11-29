@@ -23,6 +23,7 @@ class Squirrel(models.Model):
     approaches=models.BooleanField()
     indifferent=models.BooleanField()
     runs_from=models.BooleanField()
-
+    def __str__(self):
+        return f'Squirrel: {self.unique_squirrel_id}'
 
 # Create your models here.
