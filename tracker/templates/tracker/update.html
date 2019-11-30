@@ -12,6 +12,10 @@
 		<div>
 		<form method="post" action="">
 			{% csrf_token %}
+			<button type="submit"> Delete </button>
+		</form>
+		<form method="post" action="">
+			{% csrf_token %}
 			<input type="text" placeholder="Latitude" name="latitude"><br>
 			<input type="text" placeholder="Longitude" name="lngitude"><br>
 			<input type="text" placeholder="Unique Squirrel ID" name="unique_squirrel_id"><br>
