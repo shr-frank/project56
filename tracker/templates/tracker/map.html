@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+  <style>
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+  }
+  </style>
 
-	<h1> sample MAP html!!</h1>
-</body>
-</html>
+    </head>
+    <body>
+<div id="map", class="overlay"></div>
+
+<script> 
+	var map=L.map('map').setView([40.78492,-73.972776],14); 
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', maxZoom: 18,id: 'mapbox/streets-v11',accessToken: 'pk.eyJ1IjoiaWhhdGVjb2NvbnV0IiwiYSI6ImNrM2t4c25zYjBsYmczb21peml3bHV3bXIifQ.BYu4xyqfKD2nZq9Bc8GNfA'}).addTo(map);
+{% for squirrel in sqs %}
+var marker=L.marker([{{squirrel.latitude}},{{squirrel.longitude}}]).addTo(map);
+marker.bindPopup("{{squirrel.unique_squirrel_id}}").openPopup();
+{% endfor %} </script>	
+
+    </body>
