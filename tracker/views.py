@@ -6,6 +6,7 @@ from tracker.models import Squirrel
 
 def map(request):
     return(render(request, 'tracker/map.html',locals()))
+
 def sightings(request):
     sq_all=Squirrel.objects.all()
     return render(request, 'tracker/sightings.html', locals())
@@ -61,4 +62,6 @@ def add(request):
         print('successully added a new squirrel')
     return render(request, 'tracker/add.html',locals())
 
-# Create your views here.
+def stats(request):
+    print('STATS')
+
