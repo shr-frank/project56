@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats</title>
+    <style>
+    table, th, td {
+     border: 1px solid black;
+    }
+    table {
+    width: 50%;
+    background-color: #91AEDB;
+    }
+    </style>
+</head>
+<body>
+<h1> Sightings Squirrels </h1>
+<table>
+	{% for head,num in dict_.items %}
+	<tr>
+		<th>{{head}}:</th>
+		<td>{{num}}</th>
+        </tr>
+	{% endfor %}
+</table>
+</body>
+</html>

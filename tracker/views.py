@@ -3,9 +3,11 @@ from django.template import RequestContext
 from .models import *
 from django.apps import apps
 from tracker.models import Squirrel
+from django.db import connection
 
 def map(request):
     return(render(request, 'tracker/map.html',locals()))
+
 def sightings(request):
     sq_all=Squirrel.objects.all()
     return render(request, 'tracker/sightings.html', locals())
@@ -61,4 +63,21 @@ def add(request):
         print('successully added a new squirrel')
     return render(request, 'tracker/add.html',locals())
 
-# Create your views here.
+def stats(request):
+    cursor = connection.cursor()
+    query="""select count(*) as total_sightings,sum(running) as running_squirrels,sum(chasing) as chasing_squirrels,
+          sum(eating)as eating_squirrels,sum(foraging) as foraging_squirrels,
+          sum(kuks) as kuks, sum(quaas) as quaas,
+          sum(tail_flags) as tail_flags,sum(tail_twitches) as tail_twitches
+             from tracker_squirrel """
+    cursor.execute(query)
+    num_fields = len(cursor.description)
+    field_names = [i[0] for i in cursor.description]
+    result = cursor.fetchone()
+    dict_=dict()
+    for idx in range(len(field_names)):
+        dict_[field_names[idx]]=result[idx]
+
+    return render(request, 'tracker/stats.html',locals())
+
+
