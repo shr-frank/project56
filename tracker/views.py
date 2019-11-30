@@ -4,12 +4,21 @@ from .models import *
 from django.apps import apps
 from tracker.models import Squirrel
 
+def map(request):
+    return(render(request, 'tracker/map.html',locals()))
 def sightings(request):
     sq_all=Squirrel.objects.all()
     return render(request, 'tracker/sightings.html', locals())
 
-def update(request,unique_squirrel_id):    
-    if request.method=='POST':
+def update(request,unique_squirrel_id):
+    if request.method=='POST' and len(list(request.POST.values()))==1:
+        print('Successfully Deleted Squirrel')
+        sqs = Squirrel.objects.filter(unique_squirrel_id=unique_squirrel_id)
+        for sq in sqs:
+            sq.delete()
+
+    elif  request.method=='POST':
+        print('Successfully Updated Squirrel')
         x=list(request.POST.values())[1:]
         sqs = Squirrel.objects.filter(unique_squirrel_id=unique_squirrel_id)
         model = apps.get_model('tracker', 'Squirrel')

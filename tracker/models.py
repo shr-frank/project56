@@ -19,7 +19,7 @@ class Squirrel(models.Model):
     quaas=models.BooleanField(null=True)
     moans=models.BooleanField(null=True)
     tail_flags=models.BooleanField(null=True)
-    tail_twiches=models.BooleanField(null=True)
+    tail_twitches=models.BooleanField(null=True)
     approaches=models.BooleanField(null=True)
     indifferent=models.BooleanField(null=True)
     runs_from=models.BooleanField(null=True)
