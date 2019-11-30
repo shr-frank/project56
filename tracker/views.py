@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.template import RequestContext
 from .models import *
 from django.apps import apps
-from tracker.models import Squirrel
 from django.db import connection
 
 def map(request):
+    sqs=Squirrel.objects.raw('SELECT id, latitude, longitude,unique_squirrel_id from tracker_squirrel')
     return(render(request, 'tracker/map.html',locals()))
 
 def sightings(request):
@@ -55,7 +55,7 @@ def add(request):
              quaas=x[16],\
              moans=x[17],\
              tail_flags=x[18],\
-             tail_twiches=x[19],\
+             tail_twitches=x[19],\
              approaches=x[20],\
              indifferent=x[21],\
              runs_from=x[22])
