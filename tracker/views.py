@@ -74,10 +74,32 @@ def stats(request):
     num_fields = len(cursor.description)
     field_names = [i[0] for i in cursor.description]
     result = cursor.fetchone()
-    dict_=dict()
+    dict_1=dict()
     for idx in range(len(field_names)):
-        dict_[field_names[idx]]=result[idx]
+        dict_1[field_names[idx]]=result[idx]
 
+    cursor = connection.cursor()
+    query="""select primary_fur_color,count(*)
+             from tracker_squirrel
+             group by primary_fur_color"""
+    cursor.execute(query)
+    result = cursor.fetchall()
+    dict_2=dict()
+    for idx in range(len(result)):
+        dict_2[result[idx][0]]=result[idx][1]
+    del dict_2['nan']
+
+    cursor = connection.cursor()
+    query="""select age,count(*)
+             from tracker_squirrel
+             group by age"""
+    cursor.execute(query)
+    result = cursor.fetchall()
+    dict_3=dict()
+    for idx in range(len(result)):
+        dict_3[result[idx][0]]=result[idx][1]
+    del dict_3['?']
+    del dict_3['nan']
     return render(request, 'tracker/stats.html',locals())
 
 

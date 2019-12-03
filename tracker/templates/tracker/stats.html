@@ -8,20 +8,41 @@
      border: 1px solid black;
     }
     table {
-    width: 50%;
-    background-color: #91AEDB;
+    width: 30%;
+    background-color: #BFD6FA;
     }
     </style>
 </head>
 <body>
-<h1> Sightings Squirrels </h1>
+<h1> Squirrel Sightings Stats </h1>
+<p><strong>Sightings detail</strong><p>
 <table>
-	{% for head,num in dict_.items %}
+	{% for head,num in dict_1.items %}
 	<tr>
 		<th>{{head}}:</th>
 		<td>{{num}}</th>
         </tr>
 	{% endfor %}
+</table>
+<br>
+<p><strong>Fur Color Distribution</strong><p>
+<table>
+        {% for head,num in dict_2.items %}
+        <tr>
+                <th>{{head}}:</th>
+                <td>{{num}}</th>
+        </tr>
+        {% endfor %}
+</table>
+<br>
+<p><strong>Age Distribution</strong><p>
+<table>
+        {% for head,num in dict_3.items %}
+        <tr>
+                <th>{{head}}:</th>
+                <td>{{num}}</th>
+        </tr>
+        {% endfor %}
 </table>
 </body>
 </html>
