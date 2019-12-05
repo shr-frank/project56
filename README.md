@@ -3,7 +3,7 @@
 This is a Squirrel Tracker that used the open source data to establish a database of squirrels in Central Park and show them in the map.
 User can add, update, delete information about squirrel sightings. 
 
-##Functions
+## Functions
 
 We provide two management commands:
 
@@ -11,9 +11,9 @@ We provide two management commands:
   * Import a csv file to the database
 
 * Export squirrel data:
-  *Export squirrel data to csv file
+  * Export squirrel data to csv file
 
-##Views
+## Views
 
 There are six views in the web app:
 
@@ -44,8 +44,17 @@ Quaas, Moans, Tail flags, Tail twitches, Approaches, Indifferent, Runs from
   * Located at: */sightings/stats*
   * Shows several stats about the squirrel sightings
 
+### Group name
 
+Project Group 56, Section 2
 
+### UNIs
+
+UNIs:[hs3153, yy3013]
+
+### Link to the server
+
+https://robotic-epoch-255500.appspot.com
 
 
 
