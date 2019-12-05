@@ -5,44 +5,158 @@
     <title>Title</title>
 </head>
 <body>
-        
+
         <p>
-        
+
         <ul>
-		<div>
-		<form method="post" action="">
-			{% csrf_token %}
-			<button type="submit"> Delete </button>
-		</form>
-		<form method="post" action="">
-			{% csrf_token %}
+                <div>
+                <form method="post" action="">
+                        {% csrf_token %}
+			<li>
+				Latitude (Previous:{{sqs.latitude}})
                         <input type="text" placeholder="Latitude (float)" name="latitude"><br>
-                        <input type="text" placeholder="Longitude (float)" name="lngitude"><br>
-                        <input type="text" placeholder="Unique Squirrel ID (string)" name="unique_squirrel_id"><br>
-                        <input type="text" placeholder="Shift (AM/PM)" name="shift"><br>
-                        <input type="text" placeholder="Date (YYYY-MM-DD)" name="date"><br>
-                        <input type="text" placeholder="Age (integer)" name="age"><br>
-                        <input type="text" placeholder="Primary Fur Color (string)" name="primary_fur_color"><br>
-                        <input type="text" placeholder="Location (string)" name="location"><br>
-                        <input type="text" placeholder="Specific Location (string)" name="specific_location"><br>
-                        <input type="text" placeholder="Running (True/False)" name="running"><br>
-                        <input type="text" placeholder="Chasing (True/False)" name="chasing"><br>
-                        <input type="text" placeholder="Climbing (True/False)" name="climbing"><br>
-                        <input type="text" placeholder="Eating (True/False)" name="eating"><br>
-                        <input type="text" placeholder="Foraging (True/False)" name="foraging"><br>
-                        <input type="text" placeholder="Other Activities (string)" name="other_activities"><br>
-                        <input type="text" placeholder="Kuks (True/False)" name="kuks"><br>
-                        <input type="text" placeholder="Quaas (True/False)" name="quaas"><br>
-                        <input type="text" placeholder="Moans (True/False)" name="moans"><br>
-                        <input type="text" placeholder="Tail Flags (True/False)" name="tail_flags"><br>
-                        <input type="text" placeholder="Tail Twitches (True/False)" name="tail_twitches"><br>
-                        <input type="text" placeholder="Approaches (True/False)" name="approaches"><br>
-                        <input type="text" placeholder="Indifferent (True/False)" name="indifferent"><br>
-                        <input type="text" placeholder="Runs From (True/False)" name="runs_from"><br>			
-			<button type="submit"> Update</button>
+			</li>
+			<li>
+			Longitude (Previous:{{sqs.longitude}}) 
+                        <input type="text" placeholder="Longitude (float)" name="longitude"><br>
+			</li>
+			<li>
+			Unique Squirrel ID (Previous:{{sqs.unique_squirrel_id}})
+                        <input type="text" placeholder="Unique Squirrel ID (string)" name="unique_squirrel_id">
+			</li>
+			<li>
+			Shift (Previous:{{sqs.shift}})
+			<select name="shift">
+				<option value="AM">AM</option>
+				<option value="PM">PM</option>
+			</select>
+			</li>
+			<li>
+			Date (Previous:{{sqs.date}})
+                        <input type="text" placeholder="YYYY-MM-DD" name="date">
+			</li>
+			<li>
+			Age (Previous:{{sqs.age}})
+                        <input type="text" placeholder="string" name="age">
+			</li>
+			<li>
+			Primary Fur Color (Previous:{{sqs.primary_fur_color}})
+                        <input type="text" placeholder="string" name="primary_fur_color">
+			</li>
+			<li>
+			Location (Previous:{{sqs.location}})
+                        <input type="text" placeholder="string" name="location">
+			</li>
+			<li>
+			Specific Location (Previous:{{sqs.specific_location}})
+                        <input type="text" placeholder="string" name="specific_location">
+			</li>
+			<li>
+			Runing (Previous:{{sqs.running}})
+			<select name="running">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        
+			</select>
+			</li>
+			<li>
+			Chasing (Previous:{{sqs.chasing}})
+                        <select name="chasing">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Climbing (Previous:{{sqs.climbing}})
+                        <select name="climbing">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Eating (Previous:{{sqs.eating}})
+                        <select name="eating">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Foraging (Previous:{{sqs.foraging}})
+			<select name="foraging">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Other Activities (Previous:{{sqs.other_activities}})
+                        <input type="text" placeholder="String" name="other_activities"><br>
+			</li>
+			<li>
+			Kuks (Previous:{{sqs.kuks}})
+			<select name="kuks">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Quaas (Previous:{{sqs.quaas}})
+                        <select name="quaas">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Moans (Previous:{{sqs.moans}})
+                        <select name="moans">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Tail Flags (Previous:{{sqs.tail_flags}})
+                        <select name="tail_flags">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Tail Twitches (Previous:{{sqs.tail_twitches}})
+                        <select name="tail_twitches">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Approaches (Previous:{{sqs.approaches}})
+                        <select name="approaches">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Indifferent (Previous:{{sqs.indifferent}})
+                        <select name="indifferent">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<li>
+			Runs From (Previous:{{sqs.runs_from}})
+                        <select name="runs_from">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                        </select>
+			</li>
+			<button type="submit"> Update </button>
+                </form>
+		<form method="post" action="">
+			{% csrf_token %}
+			<button type="submit"> Delete</button>
 		</form>
-		</div>	
+		<br>
+		{{form.errors}}
+                </div>
         </ul>
- 
+
 </body>
 </html>
