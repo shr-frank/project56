@@ -26,11 +26,11 @@ There are six views in the web app:
   * Shows the list of squirrel sightings
 
 * Update Sightings
-  * Located at: */sightings/<unique-squirrel-id>*
+  * Located at: */sightings/unique-squirrel-id*
   * Edit the sightings of the squirrel of the unique squirrel id
 
 * Delete Sightings
-  * Located at: */sightings/<unique-squirrel-id>*
+  * Located at: */sightings/unique-squirrel-id*
   * Delete the sightings of the squirrel of the unique squirrel id
 
 * Creation Settings
