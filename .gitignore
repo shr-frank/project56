@@ -1,3 +1,4 @@
 tracker/__pycache__/
 project56/__pycache__/
 tracker/migrations/__pycache__/
+tracker/management/commands/__pycache__/
