@@ -15,7 +15,7 @@ We provide two management commands:
 
 ## Views
 
-There are six views in the web app:
+There are five views in the web app:
 
 * Map
   * Located at: */map*
@@ -25,12 +25,9 @@ There are six views in the web app:
   * Located at: */sightings*
   * Shows the list of squirrel sightings
 
-* Update Sightings
+* Update/Delete Sightings
   * Located at: */sightings/unique-squirrel-id*
   * Edit the sightings of the squirrel of the unique squirrel id
-
-* Delete Sightings
-  * Located at: */sightings/unique-squirrel-id*
   * Delete the sightings of the squirrel of the unique squirrel id
 
 * Creation Settings
@@ -40,7 +37,7 @@ There are six views in the web app:
 Location, Specific Location, Running, Chasing, Climbing, Eating, Foraging, Other Activities, Kuks, 
 Quaas, Moans, Tail flags, Tail twitches, Approaches, Indifferent, Runs from
 
-*  Sightings Stats
+* Sightings Stats
   * Located at: */sightings/stats*
   * Shows several stats about the squirrel sightings
 
