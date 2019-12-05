@@ -38,7 +38,7 @@ class Command(BaseCommand):
                          quaas=df.loc[idx,'Quaas'],\
                          moans=df.loc[idx,'Moans'],\
                          tail_flags=df.loc[idx,'Tail flags'],\
-                         tail_twiches=df.loc[idx,'Tail twitches'],\
+                         tail_twitches=df.loc[idx,'Tail twitches'],\
                          approaches=df.loc[idx,'Approaches'],\
                          indifferent=df.loc[idx,'Indifferent'],\
                          runs_from=df.loc[idx,'Runs from'])
