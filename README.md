@@ -50,7 +50,7 @@ Project Group 56, Section 2
 
 ### UNIs
 
-UNIs:[hs3153, yy3013]
+UNIs: [hs3153, yy3013]
 
 ### Link to the server
 
